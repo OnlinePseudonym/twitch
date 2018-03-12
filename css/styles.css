@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700|Sarpanch:900');
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit
+}
+
+body{
+  margin: 1rem;
+  background: #362358;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-gap: 1rem;
+}
+
+.header {
+  background: #362358;
+  height: 100%;
+  font-family: 'Sarpanch', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #402969;
+  text-shadow: 
+    3px 3px 0px #fff,
+    1px 1px 1px #fff;;
+  display: grid;
+  justify-items: center;
+  algin-items: center;
+}
+
+h1 {
+  font-size: 5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.streamers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+  grid-gap: 2rem;
+}
+
+.streamer {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: start;
+  grid-gap: 1rem;
+  background: #4b3475;
+  font-size: .75rem;
+  font-weight: 300;
+}
+
+.streamer__pic {
+  width: 100%;
+}
+
+.streamer__details {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-gap: .5rem;
+  align-items: center;
+}
+
+.streamer__details > * {
+  margin: 0;
+  padding: 0;
+}
+
+.streamer__name {
+  transition: all .2s ease-in-out;
+}
+
+.streamer__name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+.streamer__game {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.streamer__game--title {
+  padding: 0;
+  margin: 0;
+}
+
+.streamer__game--pic {
+  border-radius: 50%;
+}
+
+.led {
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.4rem;
+  /* align-self: center; */
+  justify-self: end;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px 1px, inset #441313 0 -0 9px, rgba(255, 0, 0, 0.5) 0 0 12px;
+}
+
+.online {
+  background: #abff00;
+  box-shadow: 0 0 7px rgba(0,0,0,0.3), inset #304701 0 0 7px, #89FF00 0 0px 12px;
+}
+
+.streamer__desc {
+  grid-row: 2;
+  grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .streamers {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .streamer {
+    grid-template-columns: 1fr;
+  }
+  .streamer__pic {
+    display:none;
+  }
+}
+
+@media only screen and (max-width:360px) {
+  body {
+    margin: 0;
+    min-width: 330px;
+  }
+}
